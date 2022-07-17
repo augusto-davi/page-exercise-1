@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="reset">
+    <header class="header flex width-total">
+      <div class="header__panel flex vw-85">
+        <button class="btn--mobile-menu">Menu</button>
+        <div class="header__logo"><h1 id="header__logo">Instant</h1></div>
+        <nav class="header__anchors flex">
+          <div class="btn--menu-wrapper">
+            <button class="btn--mobile-menu btn--close">Close</button>
+          </div>
+          <ul class="anchors__list flex width-total reset">
+            <li class="anchors__topic"><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main width-total flex">
+      <div class="main__container container1 flex vw-85">
+        <section class="container1__content intro flex width-half">
+          <div class="container1__title">
+            <h1 class="container1__title">Instant Photo Studio</h1>
+          </div>
+          <div class="container1__description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>
+              Accusantium quos magni dicta quia inventore non neque recusandae,
+              obcaecati error aliquam repellendus vitae repudiandae blanditiis!
+            </p>
+            <div class="btn-wrapper">
+              <button class="btn btn--outline">Get Started</button>
+              <button class="btn btn--primary">View Gallery</button>
+            </div>
+          </div>
+        </section>
+        <div class="container1__content svg-wrapper flex width-half">
+          <img
+            src="./assets/images/Drinking-tea-bro.svg"
+            alt="Woman drinking tea illustration"
+          />
+        </div>
+      </div>
+
+      <div class="main__container container2 flex vw-85">
+        <section class="container2__content flex width-total">
+          <h1 class="container2__title">Welcome</h1>
+          <p class="container2__description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
+            sequi eos laudantium tenetur repellat corrupti cumque suscipit
+            distinctio mollitia maxime qui, rem architecto libero. Omnis
+            accusantium consequuntur neque adipisci nulla.
+          </p>
+          <button class="btn btn--outline">Read More</button>
+        </section>
+      </div>
+
+      <div class="container3">
+        <div class="subcontainer">
+          <div class="content one"></div>
+          <div class="content two"></div>
+        </div>
+        <div class="subcontainer">
+          <div class="content three"></div>
+          <div class="content four"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer flex">
+      <div class="footer__msg-wrapper flex vw-85">
+        <h2 class="footer__title">Contact us</h2>
+        <form class="footer__form flex" action="header__logo" method="post">
+          <input type="text" name="" id="" placeholder="Name" />
+          <input type="email" name="" id="" placeholder="Email" />
+          <input
+            type="tel"
+            pattern=""
+            name="number"
+            id=""
+            placeholder="(000) 000-0000"
+          />
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            maxlength="300"
+            placeholder="Type your message here"
+          ></textarea>
+          <button class="btn btn--outline">Enviar</button>
+        </form>
+      </div>
+    </footer>
+    <script src="./assets/js/handleMenuButton.js"></script>
+  </body>
+</html>

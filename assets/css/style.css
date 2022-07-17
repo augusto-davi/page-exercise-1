@@ -1,0 +1,405 @@
+/* variables */
+:root {
+  /* colors */
+  --main-color: #2792f2;
+  --main-color-transparency: rgba(39, 146, 242, 0.75);
+  --font-color: #dfe;
+  /* containers sizes */
+  --w-total: 100%;
+  --w-85vw: 85vw;
+  --w-half: 50%;
+  /* font-sizes */
+  /* flex font-size */
+  font-size: clamp(1rem, 0.125rem + 1.15vw, 2rem);
+  --title: 2rem;
+}
+
+/* reset */
+.reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--font-color);
+  font-family: "Poppins", sans-serif;
+}
+
+.width-total {
+  width: var(--w-total);
+}
+
+.vw-85 {
+  width: var(--w-85vw);
+}
+
+.width-half {
+  width: var(--w-half);
+}
+
+/* display */
+.flex {
+  display: flex;
+}
+
+/* 
+Macro Layouts
+header - main - footer
+classes: flex width-total
+children elements: centered, maximum width 85%
+except: container 3 children elements
+*/
+
+/* <header> elements */
+.header {
+  padding: 0.75rem 0;
+  /* background: var(--main-color); */
+  justify-content: center;
+  position: fixed;
+  background: var(--main-color-transparency);
+  border-block-end: 0.2vh solid var(--font-color);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  z-index: 1;
+}
+
+#header__logo {
+  margin: 0;
+  font-size: var(--title);
+}
+
+.container1__title,
+.container2__title {
+  margin: 0;
+  font-size: var(--title);
+}
+
+.header__panel {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header__anchors {
+  width: calc(100vw - 50vw);
+  transition: 0.3s ease-out;
+}
+
+.btn--mobile-menu {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .header__anchors {
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    height: 100vh;
+    background: var(--font-color);
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+  }
+  .btn--mobile-menu {
+    display: flex;
+    height: 2rem;
+    background-color: var(--main-color);
+    border: 0.125rem solid var(--font-color);
+    color: var(--font-color);
+  }
+
+  .btn--menu-wrapper {
+    width: var(--w-85vw);
+    padding: 0.75rem 0;
+    height: 49px;
+    display: flex;
+    align-items: center;
+  }
+  .anchors__list {
+    flex-direction: column;
+    color: #2792f2;
+    height: 70%;
+    width: 50%;
+    align-items: center;
+  }
+}
+
+.anchors__list {
+  justify-content: space-between;
+  list-style: none;
+}
+
+.anchors__topic {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* <main> elements */
+.main {
+  flex-direction: column;
+  align-items: center;
+  padding-block-start: 5rem;
+  background: var(--main-color);
+}
+
+/* 
+avoiding setting macro components' height will make the layout more flexible
+.main__container {
+  height: 33rem;
+}
+*/
+
+/* container 1 */
+.container1 {
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  padding-block-start: 5vh;
+  padding-block-end: 2rem;
+  gap: clamp(0.5rem, 100vw / 20, 4rem);
+}
+
+.container1__content {
+  /* width: 50%; */
+  flex: 1 1 300px;
+  /* padding: 2rem; */
+  justify-content: center;
+}
+
+.intro {
+  flex-direction: column;
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--w-total);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 580px) {
+  .btn-wrapper {
+    justify-content: space-evenly;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn--primary {
+  background-color: var(--font-color);
+  border: 0.125rem solid var(--font-color);
+  color: var(--main-color);
+}
+
+.btn--outline {
+  background-color: var(--main-color);
+  border: 0.125rem solid var(--font-color);
+  color: var(--font-color);
+}
+
+.svg-wrapper {
+  align-items: center;
+}
+
+@media (min-width: 750px) {
+  .intro {
+    flex-basis: 240px;
+  }
+  .svg-wrapper {
+    flex-basis: 360px;
+  }
+}
+
+.container1__svg {
+  /* width: 100%; */
+  max-inline-size: 100%;
+}
+/* container 2 */
+.container2 {
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.container2__content {
+  flex-direction: column;
+  align-items: center;
+}
+
+.container2__description {
+  text-align: center;
+  width: 90%;
+  min-width: 290px;
+  max-width: calc(100vw - 50%);
+}
+
+/* container 3 */
+.container3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* .container3__card {
+  display: grid;
+  place-items: center;
+  width: 50%;
+} */
+
+.card__content {
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+.card__content > img {
+  width: 50%;
+  height: 100%;
+}
+
+/* attached styles */
+.container3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.subcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  flex: 1 1 300px;
+  width: 100%;
+  background-size: cover;
+}
+
+.content__title {
+  color: var(--font-color);
+}
+
+.one {
+  background-image: image-set(
+    url("../images/dog-pexels-648x486.png") 1x,
+    url("../images/dog-pexels-1296x972.png") 2x
+  );
+  background-image: -webkit-image-set(
+    url("../images/dog-pexels-648x486.png") 1x,
+    url("../images/dog-pexels-1296x972.png") 2x
+  );
+  background-position: center;
+  filter: brightness(60%);
+}
+
+.two {
+  background-image: image-set(
+    url("../images/jakob-owens-uE_N2i6-TRM-unsplash-576x384.png") 1x,
+    url("../images/jakob-owens-uE_N2i6-TRM-unsplash.jpg") 2x
+  );
+  background-image: -webkit-image-set(
+    url("../images/jakob-owens-uE_N2i6-TRM-unsplash-576x384.png") 1x,
+    url("../images/jakob-owens-uE_N2i6-TRM-unsplash.jpg") 2x
+  );
+  background-position: center;
+  filter: brightness(60%);
+}
+
+.three {
+  background-image: image-set(
+    url("../images/pietro-de-grandi-6U4wogjLArk-unsplash-384x576.png") 1x,
+    url("../images/pietro-de-grandi-6U4wogjLArk-unsplash.jpg") 2x
+  );
+  background-image: -webkit-image-set(
+    url("../images/pietro-de-grandi-6U4wogjLArk-unsplash-384x576.png") 1x,
+    url("../images/pietro-de-grandi-6U4wogjLArk-unsplash.jpg") 2x
+  );
+  background-position: center bottom 40%;
+  filter: brightness(60%);
+}
+
+.four {
+  background-image: image-set(
+    url("../images/jeremy-wong-weddings-464ps_nOflw-unsplash-424x283.png") 1x,
+    url("../images/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg") 3x
+  );
+  background-image: -webkit-image-set(
+    url("../images/jeremy-wong-weddings-464ps_nOflw-unsplash-424x283.png") 1x,
+    url("../images/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg") 3x
+  );
+  background-position: center;
+  filter: brightness(60%);
+}
+
+.footer {
+  justify-content: center;
+  background: var(--font-color);
+  padding: 2rem;
+}
+
+.footer__msg-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__title {
+  color: var(--main-color);
+  font-size: var(--title);
+}
+
+.footer__form {
+  flex-direction: column;
+  width: clamp(290px, var(--w-half), var(--w-half));
+  margin-block-end: 2rem;
+}
+
+form > button {
+  width: 50%;
+  align-self: center;
+}
+
+textarea {
+  resize: none;
+  height: 12rem;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+  font-size: inherit;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0;
+  border-block-end: 0.5vh solid var(--main-color);
+  background: transparent;
+}
